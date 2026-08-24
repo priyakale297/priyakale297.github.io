@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
@@ -13,290 +11,415 @@
 
   <title>Priya Kale | Python Developer</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff5fa;
+      color: #3d2632;
+      line-height: 1.7;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #f3cddd;
+      box-shadow: 0 3px 15px rgba(170, 70, 110, 0.08);
+    }
+
+    .logo {
+      color: #c33770;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #633b4e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #c33770;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #fff8fb, #ffe7f1);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .profile-photo {
+      width: 155px;
+      height: 155px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 8px 30px rgba(190, 60, 110, 0.2);
+      margin-bottom: 25px;
+    }
+
+    .hero-about,
+    .section-label {
+      color: #c33770;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow {
+      color: #8b6072;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+      color: #402633;
+    }
+
+    h1 span {
+      color: #c33770;
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      color: #71475b;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      margin: auto;
+      color: #694c5b;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #c33770;
+      color: white;
+    }
+
+    .btn.primary:hover {
+      background: #a9285d;
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #c33770;
+      border: 2px solid #c33770;
+    }
+
+    .btn.secondary:hover {
+      background: #fff0f6;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 80px 8%;
+    }
+
+    .section.alt {
+      background: #fff;
+    }
+
+    .section > h2 {
+      font-size: 36px;
+      color: #402633;
+      margin-bottom: 40px;
+    }
+
+    .timeline,
+    .skill-grid,
+    .project-grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    .timeline {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid #f2cddd;
+      box-shadow: 0 8px 25px rgba(150, 60, 100, 0.08);
+    }
+
+    .alt .card {
+      background: #fffafd;
+    }
+
+    .card h3 {
+      color: #b52e67;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #654c59;
+      margin-bottom: 10px;
+    }
+
+    .card span {
+      display: inline-block;
+      color: #c33770;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .tags {
+      color: #b52e67 !important;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .project {
+      height: 100%;
+    }
+
+    .contact {
+      text-align: center;
+      background: linear-gradient(135deg, #ffe8f2, #fff6fa);
+    }
+
+    .contact > p:not(.section-label):not(.small) {
+      max-width: 750px;
+      margin: 0 auto;
+      color: #654c59;
+    }
+
+    .small {
+      margin-top: 25px;
+      color: #806070;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #402633;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .section {
+        padding: 60px 6%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero h2 {
+        font-size: 18px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .section > h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
-
   <header class="navbar">
-
-    <a class="logo" href="#home">
-      Priya Kale
-    </a>
+    <a class="logo" href="#home">Priya Kale</a>
 
     <nav>
-
       <a href="#home">Home</a>
-
       <a href="#education">Education</a>
-
       <a href="#skills">Skills</a>
-
       <a href="#projects">Projects</a>
-
       <a href="#training">Training</a>
-
       <a href="#contact">Contact</a>
-
     </nav>
-
   </header>
-
 
   <main>
 
-
-    <!-- ================= HOME ================= -->
-
     <section id="home" class="hero">
-
       <div class="hero-content">
 
-        <!-- PROFILE PHOTO -->
-
         <img
-          src="./profile.jpg"
+          src="profile.jpg"
           alt="Priya Kale Profile Photo"
           class="profile-photo"
         >
 
+        <p class="hero-about">ABOUT ME</p>
 
-        <!-- ABOUT ME -->
+        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-        <p class="hero-about">
-          ABOUT ME
-        </p>
+        <h1>Hi, I'm <span>Priya Kale</span></h1>
 
-
-        <p class="eyebrow">
-          WELCOME TO MY PORTFOLIO
-        </p>
-
-
-        <h1>
-          Hi, I'm <span>Priya Kale</span>
-        </h1>
-
-
-        <h2>
-          Python Developer | Data Analyst | Data Engineering
-        </h2>
-
+        <h2>Python Developer | Data Analyst | Data Engineering</h2>
 
         <p class="hero-description">
           I build practical applications and data solutions using
           Python, SQL, Django, Power BI and modern web technologies.
         </p>
 
-
-        <!-- BUTTONS -->
-
         <div class="buttons">
-
-          <a
-            class="btn primary"
-            href="#projects"
-          >
-            View Projects
-          </a>
-
-
-          <!-- CORRECT RESUME FILE -->
+          <a class="btn primary" href="#projects">View Projects</a>
 
           <a
             class="btn secondary"
-            href="./Priya_Fresher_Resume.pdf"
+            href="Priya_Fresher_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
             📄 View Resume
           </a>
-
         </div>
 
       </div>
-
     </section>
 
-
-
-    <!-- ================= EDUCATION ================= -->
-
     <section id="education" class="section alt">
-
-      <p class="section-label">
-        EDUCATION
-      </p>
-
-
-      <h2>
-        Academic Background
-      </h2>
-
+      <p class="section-label">EDUCATION</p>
+      <h2>Academic Background</h2>
 
       <div class="timeline">
 
-
-        <!-- B.TECH -->
-
         <div class="card">
+          <h3>Bachelor of Technology (B.Tech)</h3>
 
-          <h3>
-            Bachelor of Technology (B.Tech)
-          </h3>
-
+          <p><strong>Electronics & Computer Engineering</strong></p>
 
           <p>
-            <strong>
-              Electronics & Computer Engineering
-            </strong>
+            Khandesh College Education Society's College of
+            Engineering & Management, Jalgaon
           </p>
-
-
-          <p>
-            Khandesh College Education Society's
-            College of Engineering & Management, Jalgaon
-          </p>
-
 
           <p>
             Dr. Babasaheb Ambedkar Technological University
             (DBATU), Lonere
           </p>
 
+          <span>2022 – 2026</span>
 
-          <span>
-            2022 – 2026
-          </span>
-
-
-          <p class="tags">
-            CGPA: 7.50 / 10.00
-          </p>
-
+          <p class="tags">CGPA: 7.50 / 10.00</p>
         </div>
-
-
-
-        <!-- HSC -->
 
         <div class="card">
-
-          <h3>
-            Higher Secondary Certificate (HSC)
-          </h3>
-
-
-          <p>
-            Maharashtra State Board
-          </p>
-
-
-          <span>
-            2022
-          </span>
-
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p>Maharashtra State Board</p>
+          <span>2022</span>
         </div>
-
-
-
-        <!-- SSC -->
 
         <div class="card">
-
-          <h3>
-            Secondary School Certificate (SSC)
-          </h3>
-
-
-          <p>
-            Maharashtra State Board
-          </p>
-
-
-          <span>
-            2020
-          </span>
-
+          <h3>Secondary School Certificate (SSC)</h3>
+          <p>Maharashtra State Board</p>
+          <span>2020</span>
         </div>
-
 
       </div>
-
     </section>
 
-
-
-    <!-- ================= SKILLS ================= -->
-
     <section id="skills" class="section">
-
-      <p class="section-label">
-        SKILLS
-      </p>
-
-
-      <h2>
-        Technical Skills
-      </h2>
-
+      <p class="section-label">SKILLS</p>
+      <h2>Technical Skills</h2>
 
       <div class="skill-grid">
 
-
         <div class="card">
-
-          <h3>
-            🐍 Programming
-          </h3>
-
-          <p>
-            Python<br>
-            SQL<br>
-            C / C++
-          </p>
-
+          <h3>🐍 Programming</h3>
+          <p>Python<br>SQL<br>C / C++</p>
         </div>
 
-
         <div class="card">
-
-          <h3>
-            ⚙️ Backend
-          </h3>
-
-          <p>
-            Django<br>
-            Flask<br>
-            REST APIs
-          </p>
-
+          <h3>⚙️ Backend</h3>
+          <p>Django<br>Flask<br>REST APIs</p>
         </div>
 
-
         <div class="card">
-
-          <h3>
-            🗄️ Databases
-          </h3>
-
-          <p>
-            MySQL<br>
-            SQLite
-          </p>
-
+          <h3>🗄️ Databases</h3>
+          <p>MySQL<br>SQLite</p>
         </div>
 
-
         <div class="card">
-
-          <h3>
-            📊 Data & BI
-          </h3>
-
+          <h3>📊 Data & BI</h3>
           <p>
             Pandas<br>
             scikit-learn<br>
@@ -304,102 +427,56 @@
             Tableau<br>
             Microsoft Excel
           </p>
-
         </div>
 
-
         <div class="card">
-
-          <h3>
-            🌐 Web Development
-          </h3>
-
+          <h3>🌐 Web Development</h3>
           <p>
             HTML5<br>
             CSS3<br>
             JavaScript<br>
             Bootstrap
           </p>
-
         </div>
 
-
         <div class="card">
-
-          <h3>
-            🛠️ Tools
-          </h3>
-
+          <h3>🛠️ Tools</h3>
           <p>
             Git<br>
             Postman<br>
             VS Code<br>
             Jupyter Notebook
           </p>
-
         </div>
 
-
         <div class="card">
-
-          <h3>
-            🤖 AI
-          </h3>
-
+          <h3>🤖 AI</h3>
           <p>
             Generative AI<br>
             Prompt Engineering
           </p>
-
         </div>
 
-
         <div class="card">
-
-          <h3>
-            📈 Data Analysis
-          </h3>
-
+          <h3>📈 Data Analysis</h3>
           <p>
             Data Cleaning<br>
             Data Visualization<br>
             Business Insights
           </p>
-
         </div>
 
-
       </div>
-
     </section>
 
-
-
-    <!-- ================= PROJECTS ================= -->
-
     <section id="projects" class="section alt">
-
-      <p class="section-label">
-        PROJECTS
-      </p>
-
-
-      <h2>
-        Featured Projects
-      </h2>
-
+      <p class="section-label">PROJECTS</p>
+      <h2>Featured Projects</h2>
 
       <div class="project-grid">
 
-
-        <!-- PROJECT 1 -->
-
         <article class="project card">
-
-          <h3>
-            AI Resume Analyzer
-          </h3>
-
+          <h3>AI Resume Analyzer</h3>
 
           <p>
             Developed a Django-based web application to analyze
@@ -407,76 +484,51 @@
             ATS-style match score.
           </p>
 
-
           <p>
             Implemented PDF resume parsing and skill extraction
             using PyPDF2, spaCy, Pandas and scikit-learn.
           </p>
-
 
           <p>
             Identified matched and missing skills and generated
             recommendations to improve resume-job compatibility.
           </p>
 
-
           <p>
             Implemented secure user authentication, resume upload,
             database management and job description matching.
           </p>
 
-
           <p class="tags">
             Python · Django · MySQL · PyPDF2 · spaCy · Pandas · scikit-learn
           </p>
-
         </article>
 
-
-
-        <!-- PROJECT 2 -->
-
         <article class="project card">
-
-          <h3>
-            Student Management System
-          </h3>
-
+          <h3>Student Management System</h3>
 
           <p>
             Developed a CRUD-based web application to manage
             student records using Python, Django and MySQL.
           </p>
 
-
           <p>
             Implemented database integration and structured
             backend functionality for managing student data.
           </p>
 
-
           <p class="tags">
             Python · Django · MySQL · HTML · CSS
           </p>
-
         </article>
 
-
-
-        <!-- PROJECT 3 -->
-
         <article class="project card">
-
-          <h3>
-            Sales Data Analysis Dashboard
-          </h3>
-
+          <h3>Sales Data Analysis Dashboard</h3>
 
           <p>
             Developed a business dashboard to analyze sales,
             revenue, product performance and business trends.
           </p>
-
 
           <p>
             Used data analysis and visualization techniques
@@ -484,311 +536,137 @@
             business insights.
           </p>
 
-
           <p class="tags">
             Python · Pandas · SQL · Power BI · Excel
           </p>
-
         </article>
 
-
-
-        <!-- PROJECT 4 -->
-
         <article class="project card">
-
-          <h3>
-            Tableau Superstore Dashboard
-          </h3>
-
+          <h3>Tableau Superstore Dashboard</h3>
 
           <p>
             Created an interactive dashboard to analyze sales,
             profit, quantity, region, category and order-date trends.
           </p>
 
-
           <p>
             Used Tableau visualizations to understand business
             performance and generate data-driven insights.
           </p>
 
-
           <p class="tags">
             Tableau · Data Analysis · Data Visualization
           </p>
-
         </article>
 
-
-
-        <!-- PROJECT 5 -->
-
         <article class="project card">
-
-          <h3>
-            Library Management System
-          </h3>
-
+          <h3>Library Management System</h3>
 
           <p>
             Developed a database-driven application for managing
             books, students, issue records and library transactions.
           </p>
 
-
           <p>
             Implemented CRUD operations and database management
             functionality for efficient library record handling.
           </p>
 
-
           <p class="tags">
             Python · SQL · MySQL · CRUD
           </p>
-
         </article>
 
-
-
-        <!-- PROJECT 6 -->
-
         <article class="project card">
-
-          <h3>
-            Sales Data Engineering Project
-          </h3>
-
+          <h3>Sales Data Engineering Project</h3>
 
           <p>
             Developed a data engineering workflow for processing
             and analyzing sales data from structured datasets.
           </p>
 
-
           <p>
             Performed data extraction, cleaning, transformation
             and loading to prepare reliable datasets for analysis.
           </p>
-
 
           <p>
             Used SQL and Python-based data processing techniques
             to generate business-ready data and insights.
           </p>
 
-
           <p class="tags">
             Python · SQL · Pandas · MySQL · ETL · Data Cleaning
           </p>
-
         </article>
 
-
       </div>
-
     </section>
 
-
-
-    <!-- ================= TRAINING & CERTIFICATION ================= -->
-
     <section id="training" class="section">
-
-      <p class="section-label">
-        TRAINING & CERTIFICATION
-      </p>
-
-
-      <h2>
-        Training & Certification
-      </h2>
-
+      <p class="section-label">TRAINING & CERTIFICATION</p>
+      <h2>Training & Certification</h2>
 
       <div class="timeline">
 
-
-        <!-- FIRSTBIT -->
-
         <div class="card">
-
-          <h3>
-            Python Data Science With Full Stack
-          </h3>
-
-
-          <p>
-            FirstBit Solutions, Pune
-          </p>
-
+          <h3>Python Data Science With Full Stack</h3>
+          <p>FirstBit Solutions, Pune</p>
         </div>
 
-
-
-        <!-- NEXANOVA -->
-
         <div class="card">
-
-          <h3>
-            Internship Completion Certificate
-          </h3>
-
-
-          <p>
-            NEXANOVA PROTECH
-          </p>
-
-
-          <p>
-            Shivajinagar, Pune, Maharashtra
-          </p>
-
+          <h3>Internship Completion Certificate</h3>
+          <p>NEXANOVA PROTECH</p>
+          <p>Shivajinagar, Pune, Maharashtra</p>
         </div>
 
-
-
-        <!-- AREAS OF INTEREST -->
-
         <div class="card">
-
-          <h3>
-            Areas of Interest
-          </h3>
-
-
-          <p>
-            Data Analytics
-          </p>
-
-
-          <p>
-            Backend Development
-          </p>
-
-
-          <p>
-            Generative AI
-          </p>
-
+          <h3>Areas of Interest</h3>
+          <p>Data Analytics</p>
+          <p>Backend Development</p>
+          <p>Generative AI</p>
         </div>
-
 
       </div>
-
     </section>
-
-
-
-    <!-- ================= ADDITIONAL INFORMATION ================= -->
 
     <section class="section alt">
-
-      <p class="section-label">
-        ADDITIONAL INFORMATION
-      </p>
-
-
-      <h2>
-        Career Preferences
-      </h2>
-
+      <p class="section-label">ADDITIONAL INFORMATION</p>
+      <h2>Career Preferences</h2>
 
       <div class="card">
-
-        <p>
-          📍 Pune, Maharashtra
-        </p>
-
-
-        <br>
-
-
-        <p>
-          Open to on-site, hybrid or remote opportunities
-          in India.
-        </p>
-
+        <p>📍 Pune, Maharashtra</p>
+        <p>Open to on-site, hybrid or remote opportunities in India.</p>
       </div>
-
     </section>
 
-
-
-    <!-- ================= LANGUAGES ================= -->
-
     <section class="section">
-
-      <p class="section-label">
-        LANGUAGES
-      </p>
-
-
-      <h2>
-        Languages
-      </h2>
-
+      <p class="section-label">LANGUAGES</p>
+      <h2>Languages</h2>
 
       <div class="skill-grid">
 
-
         <div class="card">
-
-          <h3>
-            English
-          </h3>
-
-          <p>
-            Beginner
-          </p>
-
+          <h3>English</h3>
+          <p>Beginner</p>
         </div>
 
-
         <div class="card">
-
-          <h3>
-            Marathi
-          </h3>
-
-          <p>
-            Beginner
-          </p>
-
+          <h3>Marathi</h3>
+          <p>Beginner</p>
         </div>
 
-
         <div class="card">
-
-          <h3>
-            Hindi
-          </h3>
-
-          <p>
-            Beginner
-          </p>
-
+          <h3>Hindi</h3>
+          <p>Beginner</p>
         </div>
-
 
       </div>
-
     </section>
 
-
-
-    <!-- ================= CONTACT ================= -->
-
     <section id="contact" class="section contact">
-
-      <p class="section-label">
-        CONTACT
-      </p>
-
-
-      <h2>
-        Let's Connect
-      </h2>
-
+      <p class="section-label">CONTACT</p>
+      <h2>Let's Connect</h2>
 
       <p>
         I am open to opportunities in Python Development,
@@ -796,11 +674,7 @@
         Feel free to connect with me.
       </p>
 
-
       <div class="buttons">
-
-
-        <!-- EMAIL -->
 
         <a
           class="btn primary"
@@ -808,9 +682,6 @@
         >
           📧 Email
         </a>
-
-
-        <!-- LINKEDIN -->
 
         <a
           class="btn secondary"
@@ -821,40 +692,21 @@
           LinkedIn
         </a>
 
-
       </div>
 
-
       <p class="small">
-
-        📧 pkale3487@gmail.com
-
-        <br>
-
+        📧 pkale3487@gmail.com<br>
         📍 Pune, Maharashtra
-
       </p>
-
     </section>
-
 
   </main>
 
-
-
-  <!-- ================= FOOTER ================= -->
-
   <footer>
-
     <p>
       © 2026 Priya Kale. Built with HTML, CSS & JavaScript.
     </p>
-
   </footer>
 
-
-  <script src="script.js"></script>
-
 </body>
-
 </html>
