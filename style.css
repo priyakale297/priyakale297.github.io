@@ -1,7 +1,3 @@
-/* =========================
-   GLOBAL RESET
-========================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,14 +11,12 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #172033;
+  color: #243447;
   background: #ffffff;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
   position: sticky;
@@ -35,19 +29,17 @@ body {
 
   padding: 18px 7%;
 
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
 
-  border-bottom: 1px solid #e5eef5;
+  border-bottom: 1px solid #dceff7;
 
-  box-shadow: 0 2px 12px rgba(74, 169, 216, 0.08);
+  box-shadow: 0 3px 15px rgba(130, 190, 220, 0.12);
 }
 
 .logo {
   font-size: 1.3rem;
   font-weight: 800;
-
-  color: #172033;
-
+  color: #243447;
   text-decoration: none;
 }
 
@@ -57,23 +49,18 @@ body {
 }
 
 .navbar nav a {
-  color: #4b5563;
-
+  color: #526273;
   text-decoration: none;
-
   font-weight: 600;
-
   transition: 0.3s ease;
 }
 
 .navbar nav a:hover {
-  color: #ff6f91;
+  color: #e9829b;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero {
   min-height: 82vh;
@@ -83,46 +70,40 @@ body {
 
   padding: 80px 7%;
 
-  background:
-    linear-gradient(
-      135deg,
-      #eefaff 0%,
-      #f7fcff 45%,
-      #fff1f5 100%
-    );
+  background: linear-gradient(
+    135deg,
+    #eaf8ff 0%,
+    #f5fbff 50%,
+    #fff0f5 100%
+  );
 }
 
 .hero-content {
   max-width: 900px;
-
   text-align: center;
 }
 
 
-/* =========================
-   PROFILE PHOTO
-========================= */
+/* ================= PROFILE PHOTO ================= */
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 155px;
+  height: 155px;
 
   object-fit: cover;
 
   border-radius: 50%;
 
-  border: 5px solid #ff6f91;
+  border: 5px solid #f3a0b4;
 
   margin-bottom: 20px;
 
   box-shadow:
-    0 8px 25px rgba(74, 169, 216, 0.20);
+    0 8px 25px rgba(120, 190, 220, 0.22);
 }
 
 
-/* =========================
-   ABOUT ME - HERO
-========================= */
+/* ================= ABOUT ME ================= */
 
 .hero-about {
   font-size: 0.85rem;
@@ -131,15 +112,13 @@ body {
 
   font-weight: 800;
 
-  color: #ff6f91;
+  color: #e9829b;
 
   margin-bottom: 10px;
 }
 
 
-/* =========================
-   HERO TEXT
-========================= */
+/* ================= LABELS ================= */
 
 .eyebrow,
 .section-label {
@@ -149,8 +128,11 @@ body {
 
   font-weight: 800;
 
-  color: #4aa9d8;
+  color: #65afd2;
 }
+
+
+/* ================= HERO TITLE ================= */
 
 .hero h1 {
   font-size: clamp(2.5rem, 7vw, 5rem);
@@ -161,13 +143,13 @@ body {
 }
 
 .hero h1 span {
-  color: #ff6f91;
+  color: #e9829b;
 }
 
 .hero h2 {
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
 
-  color: #4b5563;
+  color: #526273;
 
   margin-bottom: 18px;
 }
@@ -177,15 +159,13 @@ body {
 
   margin: auto;
 
-  color: #5d6675;
+  color: #637282;
 
   font-size: 1.05rem;
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* ================= BUTTONS ================= */
 
 .buttons {
   display: flex;
@@ -216,47 +196,45 @@ body {
 }
 
 
-/* Primary */
+/* Pink Button */
 
 .primary {
-  background: #ff6f91;
+  background: #efa0b4;
 
   color: #ffffff;
 
-  border: 1px solid #ff6f91;
+  border: 1px solid #efa0b4;
 }
 
 .primary:hover {
-  background: #f5577d;
+  background: #e9829b;
 
-  border-color: #f5577d;
+  border-color: #e9829b;
 
   transform: translateY(-2px);
 }
 
 
-/* Secondary */
+/* Blue Button */
 
 .secondary {
-  border: 1px solid #9ed8ee;
+  border: 1px solid #9bd5ed;
 
-  color: #267da8;
+  color: #4c9bc0;
 
   background: #ffffff;
 }
 
 .secondary:hover {
-  background: #eaf8fd;
+  background: #eaf8ff;
 
-  border-color: #4aa9d8;
+  border-color: #65afd2;
 
   transform: translateY(-2px);
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
 
 .section {
   padding: 80px 7%;
@@ -270,28 +248,29 @@ body {
   font-size: 2.2rem;
 
   margin: 8px 0 18px;
+
+  color: #243447;
 }
 
 .lead {
   max-width: 850px;
 
-  color: #5d6675;
+  color: #637282;
 
   font-size: 1.05rem;
 }
 
 
-/* Alternate sections */
+/* ================= ALTERNATE SECTION ================= */
 
 .alt {
   max-width: none;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f4fbff,
-      #fff7f9
-    );
+  background: linear-gradient(
+    135deg,
+    #f3fbff,
+    #fff6f9
+  );
 }
 
 .alt > * {
@@ -303,9 +282,7 @@ body {
 }
 
 
-/* =========================
-   SKILLS
-========================= */
+/* ================= SKILLS ================= */
 
 .skill-grid {
   display: grid;
@@ -318,9 +295,7 @@ body {
 }
 
 
-/* =========================
-   PROJECTS
-========================= */
+/* ================= PROJECTS ================= */
 
 .project-grid {
   display: grid;
@@ -333,21 +308,19 @@ body {
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* ================= CARDS ================= */
 
 .card {
   padding: 25px;
 
   background: #ffffff;
 
-  border: 1px solid #e4edf3;
+  border: 1px solid #e1eef4;
 
   border-radius: 16px;
 
   box-shadow:
-    0 8px 24px rgba(23, 32, 51, 0.05);
+    0 8px 24px rgba(70, 120, 145, 0.07);
 
   transition:
     transform 0.3s ease,
@@ -358,31 +331,29 @@ body {
 .card:hover {
   transform: translateY(-5px);
 
-  border-color: #b8e1f1;
+  border-color: #b8deed;
 
   box-shadow:
-    0 14px 32px rgba(74, 169, 216, 0.12);
+    0 14px 32px rgba(100, 175, 210, 0.15);
 }
 
 .card h3 {
   margin-bottom: 8px;
 
-  color: #172033;
+  color: #243447;
 }
 
 .card p {
-  color: #5d6675;
+  color: #637282;
 }
 
 
-/* =========================
-   PROJECT TAGS
-========================= */
+/* ================= PROJECT TAGS ================= */
 
 .tags {
   margin-top: 15px !important;
 
-  color: #ff6f91 !important;
+  color: #df7893 !important;
 
   font-size: 0.9rem;
 
@@ -390,9 +361,7 @@ body {
 }
 
 
-/* =========================
-   TIMELINE
-========================= */
+/* ================= EDUCATION ================= */
 
 .timeline {
   display: grid;
@@ -409,25 +378,22 @@ body {
 
   margin-top: 10px;
 
-  color: #4aa9d8;
+  color: #65afd2;
 
   font-weight: 700;
 }
 
 
-/* =========================
-   CONTACT
-========================= */
+/* ================= CONTACT ================= */
 
 .contact {
   text-align: center;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f8fdff,
-      #fff5f8
-    );
+  background: linear-gradient(
+    135deg,
+    #f3fbff,
+    #fff4f7
+  );
 }
 
 .contact > p:not(.section-label) {
@@ -437,7 +403,7 @@ body {
 
   margin-right: auto;
 
-  color: #5d6675;
+  color: #637282;
 }
 
 .contact .buttons {
@@ -451,16 +417,14 @@ body {
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer {
   text-align: center;
 
   padding: 25px;
 
-  background: #172033;
+  background: #243447;
 
   color: #ffffff;
 }
@@ -470,18 +434,7 @@ footer p {
 }
 
 
-/* =========================
-   LINK STYLES
-========================= */
-
-a {
-  transition: all 0.3s ease;
-}
-
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1000px) {
 
@@ -563,7 +516,6 @@ a {
 
   .profile-photo {
     width: 125px;
-
     height: 125px;
   }
 
